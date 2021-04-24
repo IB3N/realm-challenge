@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
+import ArtCard from '../components/ArtCard';
 
 export default function GalleryScreen() {
   return (
     <View style={styles.container}>
-      <Text>Hello Gallery</Text>
+      <ArtCard />
     </View>
   );
 }
