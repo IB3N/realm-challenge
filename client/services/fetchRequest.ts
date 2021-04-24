@@ -1,5 +1,5 @@
 export default async function (path: string) {
-  const url: RequestInfo = `http://localhost:4000/${path}`;
+  const url: RequestInfo = `http://192.168.1.6:4000/${path}`;
   try {
     const res: Response = await fetch(url);
     return await res.json();
