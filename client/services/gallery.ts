@@ -2,6 +2,6 @@ import fetchRequest from './fetchRequest';
 
 let path = 'gallery';
 
-export const getAll = () => fetchRequest(path);
+export const getAllArt = () => fetchRequest(path);
 
-export const getOne = (id: number) => fetchRequest(`path/${id}`);
+export const getOneArtPiece = (id: number) => fetchRequest(`path/${id}`);

@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
+import { ArtPiece } from '../../server/src/gallery/art-piece.interface';
 
-export default function ArtCard() {
+export default function ArtCard(props: { art: ArtPiece }) {
+  const { art } = props;
   return (
     <View style={styles.container}>
-      <Text>ArtCard</Text>
+      <Text>{art.title}</Text>
     </View>
   );
 }
