@@ -1,20 +1,19 @@
 import * as React from 'react';
-import { Text, StyleSheet, FlatList, SafeAreaView } from 'react-native';
+import { StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import ArtCard from '../components/ArtCard';
 import { getAllArt } from '../services/gallery';
 import { ArtPiece } from '../../server/src/gallery/art-piece.interface';
-import { Dimensions } from 'react-native';
-
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+import LottieAnimation from '../animations/LottieAnimation';
 
 export default function GalleryScreen() {
   const [art, setArt] = React.useState([]);
 
   React.useEffect(() => {
-    getAllArt().then((fetchedArt) => {
-      setArt(fetchedArt);
-    });
+    setTimeout(() => {
+      getAllArt().then((fetchedArt) => {
+        setArt(fetchedArt);
+      });
+    }, 3500);
   }, []);
 
   if (art.length) {
@@ -34,9 +33,7 @@ export default function GalleryScreen() {
         )}
       </SafeAreaView>
     );
-  } else {
-    return <Text>Loading</Text>;
-  }
+  } else return <LottieAnimation />;
 }
 
 const styles = StyleSheet.create({
@@ -44,6 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#0c2952',
   },
   flatlist: {
     flex: 1,

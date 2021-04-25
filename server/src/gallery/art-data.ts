@@ -19,6 +19,12 @@ export default [
     imageUrl: 'https://mdl.artvee.com/sftb/602586sl.jpg',
   },
   {
+    title: 'Mossant',
+    year: 1938,
+    artist: 'Leonetto Cappiello',
+    imageUrl: 'https://mdl.artvee.com/sftb/11198po.jpg',
+  },
+  {
     title: 'The Red Lily',
     year: 1890,
     artist: 'John Shelton Eland',
@@ -29,12 +35,6 @@ export default [
     year: 1896,
     artist: 'Charles Antoine Lemaire',
     imageUrl: 'https://mdl.artvee.com/sftb/51932pl.jpg',
-  },
-  {
-    title: 'Mossant',
-    year: 1938,
-    artist: 'Leonetto Cappiello',
-    imageUrl: 'https://mdl.artvee.com/sftb/11198po.jpg',
   },
   {
     title: 'Lemons, oranges and citrons',

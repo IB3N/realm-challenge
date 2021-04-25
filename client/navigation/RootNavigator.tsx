@@ -7,7 +7,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-export default function RootNavigator() {
+export default function RootNavigator(): JSX.Element {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />

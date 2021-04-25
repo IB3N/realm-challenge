@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Text, StyleSheet, View, Image } from 'react-native';
+import { Text, StyleSheet, View, Image, ImageBackground } from 'react-native';
 import { ArtPiece } from '../../server/src/gallery/art-piece.interface';
 import { Dimensions } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const win = Dimensions.get('window');
 
@@ -9,12 +10,21 @@ export default function ArtCard(props: { art: ArtPiece }) {
   const { art } = props;
   return (
     <View style={styles.container}>
-      <Image
+      <ImageBackground
         style={styles.image}
         source={{ uri: art.imageUrl }}
-        resizeMode="contain"
-      />
-      <Text style={styles.title}>{art.title}</Text>
+        resizeMode="cover"
+      >
+        <LinearGradient
+          colors={['transparent', '#000']}
+          start={[0.5, 0.1]}
+          style={styles.linearGradient}
+        >
+          <Text style={styles.title} numberOfLines={2}>
+            {art.title}
+          </Text>
+        </LinearGradient>
+      </ImageBackground>
     </View>
   );
 }
@@ -22,27 +32,33 @@ export default function ArtCard(props: { art: ArtPiece }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexBasis: '45%',
+    flexBasis: '50%',
     alignItems: 'center',
-    margin: 5,
     marginVertical: 20,
-    padding: 10,
-    borderStyle: 'solid',
-    borderColor: '#000',
-    borderWidth: 1,
-    borderRadius: 10,
+    shadowColor: '#071930',
+    shadowRadius: 5,
+    shadowOffset: { width: 6, height: 6 },
+    shadowOpacity: 1,
+  },
+  image: {
+    flex: 1,
+    overflow: 'hidden',
+    borderRadius: 20,
+    height: win.height / 3.5,
+    width: win.width / 2.2,
   },
   title: {
     textAlign: 'center',
-    padding: 5,
-  },
-  image: {
-    height: 200,
-    width: win.width / 2.4,
+    paddingVertical: 5,
+    fontFamily: 'playfair',
+    fontSize: 18,
+    color: '#fff',
   },
   linearGradient: {
-    height: 200,
-    width: win.width / 2.4,
-    opacity: 0.8,
+    width: '100%',
+    height: '100%',
+    opacity: 1.0,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
 });
