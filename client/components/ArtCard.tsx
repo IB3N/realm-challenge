@@ -6,7 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const win = Dimensions.get('window');
 
-export default function ArtCard(props: { art: ArtPiece }) {
+export default function ArtCard(props: { art: ArtPiece }): JSX.Element {
   const { art } = props;
   return (
     <View style={styles.container}>

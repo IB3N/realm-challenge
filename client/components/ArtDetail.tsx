@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 
-export default function ArtDetail() {
+export default function ArtDetail(): JSX.Element {
   return (
     <View style={styles.container}>
       <Text>ArtDetail</Text>

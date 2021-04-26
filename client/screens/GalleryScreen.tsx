@@ -5,7 +5,7 @@ import { getAllArt } from '../services/gallery';
 import { ArtPiece } from '../../server/src/gallery/art-piece.interface';
 import LottieAnimation from '../animations/LottieAnimation';
 
-export default function GalleryScreen() {
+export default function GalleryScreen(): JSX.Element {
   const [art, setArt] = React.useState([]);
 
   React.useEffect(() => {

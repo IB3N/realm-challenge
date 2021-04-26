@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-export default function HomeScreen() {
+export default function HomeScreen(): JSX.Element {
   return (
     <View style={styles.container}>
       <Image
